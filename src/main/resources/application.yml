@@ -1,0 +1,7 @@
+server:
+  port: 5454
+spring:
+  cloud:
+    gcp:
+      storage:
+        project-id: logical-voyage-477015-j4

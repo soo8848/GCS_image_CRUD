@@ -5,3 +5,17 @@ spring:
     gcp:
       storage:
         project-id: logical-voyage-477015-j4
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/mydb
+    username: mydbid
+    password: mydbpw
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MariaDBDialect
+    show-sql: true

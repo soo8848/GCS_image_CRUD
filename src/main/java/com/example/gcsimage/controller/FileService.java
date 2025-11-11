@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -52,5 +53,9 @@ public class FileService {
         FileInfo fileInfo = getFile(id);
         storage.delete(bucketName, fileInfo.getFileName());
         fileInfoRepository.deleteById(id);
+    }
+
+    public List<FileInfo> getFileList() {
+        return fileInfoRepository.findAll();
     }
 }

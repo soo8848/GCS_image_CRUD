@@ -5,17 +5,23 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/files")
 @RequiredArgsConstructor
-public class FileController {
+public class  FileController {
 
     private final FileService fileService;
 
     @PutMapping
     public FileInfo uploadFile(@RequestParam("file") MultipartFile file) throws IOException {
         return fileService.uploadFile(file);
+    }
+
+    @GetMapping
+    public List<FileInfo> getFileList() {
+        return fileService.getFileList();
     }
 
     @GetMapping("/{id}")
